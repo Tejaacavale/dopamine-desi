@@ -1,0 +1,39 @@
+/* Dopamine Desi — shared stickiness UI (toast, confetti, share button, streak chip) */
+#dd-toast {
+  position: fixed; left: 50%; bottom: 26px; transform: translate(-50%, 20px);
+  background: #1d1d2b; color: #fff; border: 1px solid rgba(255,255,255,.14);
+  padding: 12px 18px; border-radius: 999px; font-size: .9rem; font-family: "Hind", system-ui, sans-serif;
+  box-shadow: 0 12px 34px -10px rgba(0,0,0,.6); z-index: 9999; opacity: 0; pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease; max-width: 90vw; text-align: center;
+}
+#dd-toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+.dd-confetti { position: fixed; inset: 0; pointer-events: none; z-index: 9998; overflow: hidden; }
+.dd-confetti span { position: absolute; top: -8%; animation: dd-fall linear forwards; will-change: transform, opacity; }
+@keyframes dd-fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(540deg); opacity: 0; }
+}
+
+/* a share button apps can drop in (inherits app accent via --dd-accent) */
+.dd-share {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  font-family: "Space Grotesk", system-ui, sans-serif; font-weight: 700; font-size: .95rem;
+  padding: 12px 22px; border-radius: 999px; border: none; color: #fff;
+  background: var(--dd-accent, linear-gradient(100deg,#7b5cff,#ff5f6d));
+  box-shadow: 0 8px 24px -10px rgba(0,0,0,.5); transition: transform .15s ease;
+}
+.dd-share:hover { transform: translateY(-2px); }
+
+/* streak chip apps can drop in */
+.dd-streak {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  color: inherit; font-size: .8rem; padding: 5px 12px; border-radius: 999px;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+.dd-streak b { color: var(--dd-streak, #ffb84d); }
+@media (prefers-reduced-motion: reduce) {
+  .dd-confetti { display: none; }
+  #dd-toast { transition: opacity .2s; }
+}

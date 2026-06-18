@@ -1,0 +1,14 @@
+{
+  "name": "cutting-sutta",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A virtual sutta-break room with REAL presence — inspired by Korea's dopamine smoke-break sites.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0"
+  }
+}

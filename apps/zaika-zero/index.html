@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zaika Zero — all the flavour, zero bill 🧁</title>
+  <meta name="description" content="Taste the dopamine of ordering food without the delivery fee, the calories or the regret. Zero-rupee fake food delivery." />
+  <meta name="keywords" content="fake food delivery, order without paying, craving simulator, dopamine app India, Swiggy dupe" />
+  <meta name="theme-color" content="#9333ea" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://dopamine-desi.vercel.app/apps/zaika-zero/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dopamine Desi" />
+  <meta property="og:title" content="Zaika Zero — all the flavour, zero bill 🧁" />
+  <meta property="og:description" content="Taste the dopamine of ordering food without the delivery fee, the calories or the regret. Zero-rupee fake food delivery." />
+  <meta property="og:url" content="https://dopamine-desi.vercel.app/apps/zaika-zero/" />
+  <meta property="og:image" content="https://dopamine-desi.vercel.app/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zaika Zero — all the flavour, zero bill 🧁" />
+  <meta name="twitter:description" content="Taste the dopamine of ordering food without the delivery fee, the calories or the regret. Zero-rupee fake food delivery." />
+  <meta name="twitter:image" content="https://dopamine-desi.vercel.app/og-image.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Zaika Zero",
+    "applicationCategory": "FoodApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "description": "A fake food-delivery app: do the ordering ritual and pay nothing. Part of Dopamine Desi.",
+    "url": "https://dopamine-desi.vercel.app/apps/zaika-zero/",
+    "isPartOf": { "@type": "WebSite", "name": "Dopamine Desi", "url": "https://dopamine-desi.vercel.app/" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/sticky.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>" />
+  <style>:root{--brand:#9333ea;--brand-2:#c084fc}</style>
+</head>
+<body>
+  <header class="appbar">
+    <button class="back" id="backBtn" hidden>←</button>
+    <div class="loc" id="locBtn">
+      <span class="loc-label">Delivery to</span>
+      <span class="loc-val">Home · Koramangala ▾</span>
+    </div>
+    <div class="appbar-actions">
+      <button class="icon-btn" id="ordersBtn" title="Your orders">🧾</button>
+      <button class="icon-btn cart-btn" id="cartBtn" title="Cart">🛒<span class="cart-badge" id="cartBadge" hidden>0</span></button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- screens injected here -->
+  </main>
+
+  <!-- sticky cart pill -->
+  <div class="cart-pill" id="cartPill" hidden>
+    <span><b id="pillCount">0</b> item · <b id="pillTotal">₹0</b></span>
+    <button id="pillView">View cart →</button>
+  </div>
+
+  <footer class="appfoot">
+    Zaika Zero · you'll pay ₹0 forever · part of <a href="../../index.html">Dopamine Desi</a>
+  </footer>
+
+  <script src="../shared/sticky.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
