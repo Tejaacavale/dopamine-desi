@@ -73,6 +73,32 @@ function reflectSmoking() {
   $("hint").textContent = smoking
     ? "You're on a sutta. The count includes you now."
     : "Tap to light up. You'll show up in the count below.";
+  if (smoking) startBurn();
+  else stopBurn(true);
+}
+
+// ── the cigarette physically burns down while lit ──────────────
+const BURN = { full: 180, stub: 48, ms: 75000 }; // ~75s for a full sutta
+let burnTimer = null, burnStart = 0;
+function stickEl() { return document.querySelector(".stick"); }
+function startBurn() {
+  stopBurn(false);
+  burnStart = Date.now();
+  burnTimer = setInterval(() => {
+    const frac = Math.min(1, (Date.now() - burnStart) / BURN.ms);
+    const w = BURN.full - (BURN.full - BURN.stub) * frac;
+    const s = stickEl();
+    if (s) s.style.width = w + "px";
+    if (frac >= 1) {
+      stopBurn(false);
+      if (window.Sticky) Sticky.toast("Sutta khatam 🚬 light another?");
+      send({ type: "toggleSmoke" }); // burnt out → stub out for real, count drops
+    }
+  }, 250);
+}
+function stopBurn(reset) {
+  if (burnTimer) { clearInterval(burnTimer); burnTimer = null; }
+  if (reset) { const s = stickEl(); if (s) s.style.width = ""; }
 }
 
 function fmtTime(ts) {
