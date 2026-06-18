@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paper Paisa — feel the trade, lose no real money 📈</title>
+  <meta name="description" content="A paper-trading app for India: buy and sell stocks & crypto with ₹1,00,000 of fake money on a live simulated ticker. Chase green candles and the dopamine of a winning trade — without joining the 90% who lose real cash in F&O." />
+  <meta name="keywords" content="paper trading India, virtual stock market, fake trading app, practice trading, simulated stocks crypto, dopamine app" />
+  <meta name="theme-color" content="#0c0f14" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://dopamine-desi.vercel.app/apps/paper-paisa/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dopamine Desi" />
+  <meta property="og:title" content="Paper Paisa — feel the trade, lose no real money" />
+  <meta property="og:description" content="Trade stocks & crypto with ₹1,00,000 of fake money on a live simulated ticker. The rush of a green candle, zero real risk." />
+  <meta property="og:url" content="https://dopamine-desi.vercel.app/apps/paper-paisa/" />
+  <meta property="og:image" content="https://dopamine-desi.vercel.app/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Paper Paisa — feel the trade, lose no real money 📈" />
+  <meta name="twitter:description" content="Paper-trade stocks & crypto with fake money. Chase green candles, lose nothing real." />
+  <meta name="twitter:image" content="https://dopamine-desi.vercel.app/og-image.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Paper Paisa",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "description": "Paper-trading app to buy and sell stocks and crypto with simulated money. Part of Dopamine Desi.",
+    "url": "https://dopamine-desi.vercel.app/apps/paper-paisa/",
+    "isPartOf": { "@type": "WebSite", "name": "Dopamine Desi", "url": "https://dopamine-desi.vercel.app/" }
+  }
+  </script>
+</head>
+<body>
+  <header class="appbar">
+    <div class="brand">📈 Paper&nbsp;Paisa</div>
+    <div class="wallet">
+      <span class="w-label">Paper wallet</span>
+      <b id="cash">₹0</b>
+    </div>
+  </header>
+
+  <div class="disclaimer">⚠️ Simulated prices, fake money. You cannot win or lose a single real rupee here. That's the point.</div>
+
+  <main id="app"><!-- screens injected --></main>
+
+  <nav class="tabbar">
+    <button class="tab active" data-tab="market">📊 Market</button>
+    <button class="tab" data-tab="portfolio">💼 Portfolio</button>
+  </nav>
+
+  <footer class="appfoot">
+    Paper Paisa · paper money only · part of <a href="../../index.html">Dopamine Desi</a>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

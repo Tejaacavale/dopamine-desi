@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghar Jaana Hai — book the train home you'll never catch 🚆</title>
+  <meta name="description" content="Feel the 10 AM Tatkal rush without going anywhere. Pick your route home, race the queue, get a CONFIRMED seat and PNR — then remember you're not actually travelling. A keepsake ticket for the homesick. Free, no real booking." />
+  <meta name="keywords" content="Tatkal simulator, fake train booking, IRCTC dopamine app, homesick India, virtual train ticket, ghar jaana hai" />
+  <meta name="theme-color" content="#0b1014" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://dopamine-desi.vercel.app/apps/ghar-jaana-hai/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dopamine Desi" />
+  <meta property="og:title" content="Ghar Jaana Hai — book the train home you'll never catch" />
+  <meta property="og:description" content="The 10 AM Tatkal adrenaline, the CONFIRMED seat, the relief — minus the journey. A dopamine app for the homesick." />
+  <meta property="og:url" content="https://dopamine-desi.vercel.app/apps/ghar-jaana-hai/" />
+  <meta property="og:image" content="https://dopamine-desi.vercel.app/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ghar Jaana Hai — book the train home you'll never catch 🚆" />
+  <meta name="twitter:description" content="Run the Tatkal rush, get a CONFIRMED seat, ease the homesickness. No real journey." />
+  <meta name="twitter:image" content="https://dopamine-desi.vercel.app/og-image.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚆</text></svg>" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Ghar Jaana Hai",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "description": "A Tatkal-booking simulator for the homesick: race the queue, get a confirmed seat, no real journey. Part of Dopamine Desi.",
+    "url": "https://dopamine-desi.vercel.app/apps/ghar-jaana-hai/",
+    "isPartOf": { "@type": "WebSite", "name": "Dopamine Desi", "url": "https://dopamine-desi.vercel.app/" }
+  }
+  </script>
+</head>
+<body>
+  <header class="appbar">
+    <button class="back" id="backBtn" hidden>←</button>
+    <div class="brand">🚆 Ghar&nbsp;Jaana&nbsp;Hai</div>
+    <button class="icon-btn" id="tripsBtn" title="Your trips">🎫</button>
+  </header>
+
+  <div class="ribbon">A homesickness simulator · no real ticket is booked, no money is taken</div>
+
+  <main id="app"><!-- screens injected --></main>
+
+  <footer class="appfoot">
+    Ghar Jaana Hai · you're not actually going anywhere · part of <a href="../../index.html">Dopamine Desi</a>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

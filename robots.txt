@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dopamine-desi.vercel.app/sitemap.xml

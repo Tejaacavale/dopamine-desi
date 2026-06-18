@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'Space Grotesk', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12121f"/>
+      <stop offset="100%" stop-color="#0a0a12"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff5f6d"/>
+      <stop offset="55%" stop-color="#ffb84d"/>
+      <stop offset="100%" stop-color="#7b5cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="120" cy="90" r="220" fill="#7b5cff" opacity="0.18"/>
+  <circle cx="1090" cy="560" r="240" fill="#ff5f6d" opacity="0.14"/>
+  <text x="80" y="150" font-size="30" fill="#9a98c0" letter-spacing="1">⚡ inspired by South Korea's "dopamine sites"</text>
+  <text x="76" y="280" font-size="96" font-weight="700" fill="#ecebff">Do the ritual.</text>
+  <text x="76" y="390" font-size="96" font-weight="700" fill="url(#grad)">Skip the transaction.</text>
+  <text x="80" y="470" font-size="34" fill="#c9c7e6">4 working dopamine apps, built for India</text>
+  <text x="80" y="560" font-size="64">🍔🚬📈🚆</text>
+  <text x="980" y="560" font-size="40" font-weight="700" fill="#ecebff">Dopamine<tspan fill="#ffb84d">Desi</tspan></text>
+</svg>
