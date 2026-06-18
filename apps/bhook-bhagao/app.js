@@ -256,6 +256,13 @@ function placeOrder() {
 function revealTruth(kept) {
   cart = {}; saveCart();
   document.getElementById("backBtn").hidden = false;
+
+  // stickiness: streak + cumulative savings + celebrate
+  const orders = loadJSON(LS_ORDERS, []);
+  const totalKept = orders.reduce((a, o) => a + (o.wouldHavePaid || 0), 0);
+  const st = window.Sticky ? Sticky.streak("bhook") : { count: 1 };
+  if (window.Sticky) Sticky.celebrate(["🍔", "💸", "🤑", "🎉", "🛵"]);
+
   app.innerHTML = `
     <div class="track-screen reveal">
       <div class="track-emoji">🫥</div>
@@ -267,11 +274,23 @@ function revealTruth(kept) {
         <div class="stat"><b>${rupee(kept)}</b><span>money you kept</span></div>
         <div class="stat"><b>0</b><span>calories</span></div>
       </div>
-      <div style="margin-top:24px">
-        <button class="place-btn" style="max-width:280px" id="againBtn">Order nothing again</button>
+      <div style="margin-top:16px">
+        <span class="dd-streak">🔥 <b>${st.count}-day</b> streak · kept <b>${rupee(totalKept)}</b> total</span>
+      </div>
+      <div style="margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <button class="dd-share" id="shareBtn">📲 Flex my ₹0 order</button>
+        <button class="place-btn" style="max-width:240px;margin-top:0" id="againBtn">Order nothing again</button>
       </div>
     </div>`;
   document.getElementById("againBtn").addEventListener("click", () => go("home"));
+  document.getElementById("shareBtn").addEventListener("click", () => {
+    if (!window.Sticky) return;
+    Sticky.buzz();
+    Sticky.share({
+      title: "Bhook Bhagao",
+      text: `I just "ordered" ${rupee(kept)} of food and paid ₹0 😌 craving's gone anyway. Bhook Bhagao —`,
+    });
+  });
 }
 
 // ── ORDERS HISTORY (real, yours) ───────────────────────────────

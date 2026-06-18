@@ -40,8 +40,10 @@ function connect() {
     if (m.type === "presence") renderPresence(m.inRoom, m.smoking);
 
     if (m.type === "you") {
+      const wasSmoking = smoking;
       smoking = m.smoking;
       reflectSmoking();
+      if (smoking && !wasSmoking && window.onLitUp) window.onLitUp();
     }
 
     if (m.type === "chat") {
@@ -105,7 +107,7 @@ function send(obj) {
 }
 
 // interactions
-const toggle = () => send({ type: "toggleSmoke" });
+const toggle = () => { if (window.Sticky) Sticky.buzz(); send({ type: "toggleSmoke" }); };
 $("lightBtn").addEventListener("click", toggle);
 $("ciggy").addEventListener("click", toggle);
 
@@ -117,5 +119,33 @@ $("say").addEventListener("submit", (e) => {
   send({ type: "chat", text });
   input.value = "";
 });
+
+// ── stickiness: return streak + breaks taken + invite/share ──
+function refreshStreakChip() {
+  if (!window.Sticky) return;
+  const breaks = Sticky.get("sutta_breaks");
+  const st = JSON.parse(localStorage.getItem("dd_streak_sutta") || '{"count":1}');
+  const chip = $("suttaStreak");
+  chip.hidden = false;
+  chip.innerHTML = `🔥 <b>${st.count}-day</b>${breaks ? ` · ${breaks} break${breaks > 1 ? "s" : ""} taken` : ""}`;
+}
+if (window.Sticky) {
+  Sticky.streak("sutta");
+  refreshStreakChip();
+  $("suttaShare").addEventListener("click", () => {
+    Sticky.buzz();
+    Sticky.share({
+      title: "Sutta Room",
+      text: "Come sit in the Sutta Room with me — real people, taking a break together at odd hours. 🚬",
+    });
+  });
+}
+// called from the ws 'you' handler when you light up
+window.onLitUp = function () {
+  if (!window.Sticky) return;
+  Sticky.bump("sutta_breaks");
+  Sticky.celebrate(["🚬", "💨", "✨"]);
+  refreshStreakChip();
+};
 
 connect();

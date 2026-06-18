@@ -148,18 +148,32 @@ function confirmBooking() {
 function renderTicket() {
   const t = ctx.trip || loadJSON(LS_TRIPS, [])[0];
   if (!t) return go("routes");
+  const tripCount = loadJSON(LS_TRIPS, []).length;
+  const st = window.Sticky ? Sticky.streak("ghar") : { count: 1 };
+  if (window.Sticky) Sticky.celebrate(["🚆", "🎫", "🎉", "🏡", "✨"]);
+
   app.innerHTML = ticketHTML(t) + `
     <div class="reveal">
       <h2>CONFIRMED — and you're not going anywhere. 🫥</h2>
       <p>There's no train. The seat is imaginary. But that knot of <em>"will I get a ticket home?"</em>
       just loosened, didn't it? You got the relief — for ₹0, in 90 seconds.</p>
+      <div style="margin:6px 0 4px"><span class="dd-streak">🔥 <b>${st.count}-day</b> streak · <b>${tripCount}</b> seat${tripCount > 1 ? "s" : ""} home</span></div>
       <div class="btns">
+        <button class="dd-share" id="share">📲 Share my confirmed seat</button>
         <button class="btn-primary" id="again">Book another seat home</button>
         <button class="btn-ghost" id="trips">My trips 🎫</button>
       </div>
     </div>`;
   document.getElementById("again").addEventListener("click", () => go("routes"));
   document.getElementById("trips").addEventListener("click", () => go("trips"));
+  document.getElementById("share").addEventListener("click", () => {
+    if (!window.Sticky) return;
+    Sticky.buzz();
+    Sticky.share({
+      title: "Ghar Jaana Hai",
+      text: `CONFIRMED ${t.coach}/${t.seat} on the ${t.trainName}, ${t.fromCity}→${t.toCity} 🚆 (I'm not actually going anywhere). Ghar Jaana Hai —`,
+    });
+  });
 }
 function ticketHTML(t) {
   return `

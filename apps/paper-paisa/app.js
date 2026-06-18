@@ -202,6 +202,7 @@ function trade(x, side) {
     if (h.qty <= 0) delete holdings[x.sym];
     msg.textContent = `Sold for ${inr(value)} · ${realized >= 0 ? "booked" : "took a loss of"} ${signed(realized)} ${realized >= 0 ? "🤑" : "😬"}`;
     msg.className = "t-msg " + (realized >= 0 ? "up" : "down");
+    if (window.Sticky) { Sticky.buzz(); if (realized >= 0) Sticky.celebrate(["🤑", "💸", "📈", "🎉"]); }
   }
   saveCash(); saveHold();
   renderDetail(x.sym);
@@ -241,9 +242,13 @@ function renderPortfolio() {
   const net = cash + holdValue;
   const totalPnl = net - STARTING_CASH;
   const unreal = holdValue - invested;
+  const st = window.Sticky ? Sticky.streak("paper") : { count: 1 };
   app.innerHTML = `
     <div class="pf-summary">
-      <div class="lbl">Net worth (cash + holdings)</div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="lbl">Net worth (cash + holdings)</div>
+        <span class="dd-streak">🔥 <b>${st.count}-day</b></span>
+      </div>
       <div class="net mono">${inr(net)}</div>
       <div class="pf-pnl ${totalPnl >= 0 ? "up" : "down"}">${signed(totalPnl)} all-time (${pct(net, STARTING_CASH).toFixed(2)}%)</div>
       <div class="pf-split">
@@ -252,10 +257,21 @@ function renderPortfolio() {
         <span>Unrealised P&L<b class="mono ${unreal >= 0 ? "up" : "down"}">${signed(unreal)}</b></span>
       </div>
     </div>
+    <div style="text-align:center;margin:-4px 0 18px"><button class="dd-share" id="shareP">📲 Share my paper P&L</button></div>
     ${syms.length ? `<div class="list-head"><h2>Your holdings</h2></div>${syms.map(holdRow).join("")}` : emptyPortfolio()}
     ${net !== STARTING_CASH || syms.length ? `<button class="reset-link" id="reset">↺ Reset paper wallet to ${inr(STARTING_CASH)}</button>` : ""}
   `;
   app.querySelectorAll("[data-hsym]").forEach((r) => r.addEventListener("click", () => go("detail", r.dataset.hsym)));
+  const shareP = document.getElementById("shareP");
+  if (shareP) shareP.addEventListener("click", () => {
+    if (!window.Sticky) return;
+    Sticky.buzz();
+    const verb = totalPnl >= 0 ? "up" : "down";
+    Sticky.share({
+      title: "Paper Paisa",
+      text: `My paper portfolio is ${verb} ${signed(totalPnl)} (${pct(net, STARTING_CASH).toFixed(1)}%) on Paper Paisa 📈 fake money, real dopamine. Try it —`,
+    });
+  });
   const reset = document.getElementById("reset");
   if (reset) reset.addEventListener("click", () => { if (confirm("Reset to ₹1,00,000 and clear all holdings?")) { cash = STARTING_CASH; holdings = {}; saveCash(); saveHold(); renderPortfolio(); } });
 }
