@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhook Bhagao — order the food, skip the bill 🍔</title>
+  <meta name="description" content="A food-delivery app where you do the whole ritual — browse, cart, checkout, track the rider — and pay exactly ₹0. Nothing arrives. The craving leaves anyway." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>" />
+</head>
+<body>
+  <header class="appbar">
+    <button class="back" id="backBtn" hidden>←</button>
+    <div class="loc" id="locBtn">
+      <span class="loc-label">Delivery to</span>
+      <span class="loc-val">Home · Koramangala ▾</span>
+    </div>
+    <div class="appbar-actions">
+      <button class="icon-btn" id="ordersBtn" title="Your orders">🧾</button>
+      <button class="icon-btn cart-btn" id="cartBtn" title="Cart">🛒<span class="cart-badge" id="cartBadge" hidden>0</span></button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- screens injected here -->
+  </main>
+
+  <!-- sticky cart pill -->
+  <div class="cart-pill" id="cartPill" hidden>
+    <span><b id="pillCount">0</b> item · <b id="pillTotal">₹0</b></span>
+    <button id="pillView">View cart →</button>
+  </div>
+
+  <footer class="appfoot">
+    Bhook Bhagao · you'll pay ₹0 forever · part of <a href="../../index.html">Dopamine Desi</a>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -24,8 +24,8 @@
     <a class="brand" href="#top">Dopamine<span>Desi</span></a>
     <nav class="nav-links">
       <a href="#trend">the trend</a>
-      <a href="#ideas">10 apps</a>
-      <a href="#demos">try it →</a>
+      <a href="#ideas">the 10 apps</a>
+      <a href="apps/bhook-bhagao/">live →</a>
     </nav>
   </header>
 
@@ -40,13 +40,13 @@
         less alone. <strong>Here are 10 versions of that idea, built for India.</strong>
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#demos">Try 2 working ones</a>
+        <a class="btn btn-primary" href="apps/bhook-bhagao/">🍔 Open Bhook Bhagao</a>
         <a class="btn btn-ghost" href="#ideas">See all 10 ideas</a>
       </div>
       <div class="hero-stats">
-        <div><b id="liveCount">—</b><span>desis pretending right now</span></div>
+        <div><b>2</b><span>apps live &amp; working</span></div>
+        <div><b>8</b><span>more in design</span></div>
         <div><b>₹0</b><span>spent · 0 calories · 0 regret</span></div>
-        <div><b>10</b><span>apps for a tired generation</span></div>
       </div>
     </section>
 
@@ -79,59 +79,33 @@
       <div class="idea-grid" id="ideaGrid"><!-- cards injected by app.js --></div>
     </section>
 
-    <!-- DEMOS -->
-    <section id="demos" class="demos">
-      <h2 class="section-title">Two of them <span class="grad">actually work</span></h2>
-      <p class="section-sub">No sign-up, no payment, no point. Exactly the point.</p>
+    <!-- LIVE APPS -->
+    <section id="live" class="demos">
+      <h2 class="section-title">Two are <span class="grad">actually built</span></h2>
+      <p class="section-sub">Real, separate apps — not mockups. Open them. No sign-up, no payment, no fake numbers.</p>
 
-      <div class="demo-wrap">
-        <!-- FAKE FOOD -->
-        <div class="demo-card">
-          <div class="demo-head">
-            <div class="demo-title">🍔 Bhook Bhagao</div>
-            <div class="demo-tag">fake food delivery</div>
-          </div>
-          <div class="phone" id="foodApp">
-            <div class="phone-bar">
-              <span>📍 Koramangala, Bengaluru</span><span id="phoneTime">9:41</span>
-            </div>
-            <div class="phone-body" id="foodBody">
-              <div class="search">🔍 <span>Biryani, dosa, momos, chai…</span></div>
-              <div class="menu" id="menu"></div>
-            </div>
-            <div class="cart-bar" id="cartBar" hidden>
-              <div class="cart-info"><b id="cartCount">0</b> items · <span id="cartTotal">₹0</span> <small>(you won't pay)</small></div>
-              <button class="btn btn-primary sm" id="orderBtn">Place order</button>
-            </div>
-            <div class="phone-overlay" id="foodOverlay" hidden></div>
-          </div>
-        </div>
-
-        <!-- CHAI BREAK -->
-        <div class="demo-card">
-          <div class="demo-head">
-            <div class="demo-title">☕ Chai Pe Charcha</div>
-            <div class="demo-tag">virtual chai-tapri break room</div>
-          </div>
-          <div class="phone chai" id="chaiApp">
-            <div class="chai-top">
-              <div class="cup" id="cup">☕</div>
-              <p class="chai-status" id="chaiStatus">Tap the cup to join the break.</p>
-              <div class="online"><span class="dot"></span><b id="chaiOnline">0</b> people on a break right now</div>
-            </div>
-            <div class="wall" id="wall"></div>
-            <form class="chai-form" id="chaiForm">
-              <input id="chaiInput" maxlength="60" placeholder="ek aur din nikal gaya…" autocomplete="off" />
-              <button class="btn btn-primary sm" type="submit">Post</button>
-            </form>
-          </div>
-        </div>
+      <div class="live-grid">
+        <a class="live-card" href="apps/bhook-bhagao/">
+          <div class="live-emoji">🍔</div>
+          <h3>Bhook Bhagao</h3>
+          <div class="live-tag2">food delivery · single-player</div>
+          <p>Browse real menus, fill a cart, check out at ₹0, watch the rider… then "just kidding". Your order history tracks how much you didn't spend.</p>
+          <span class="open">Open app →</span>
+        </a>
+        <a class="live-card sutta" href="http://localhost:5051/">
+          <div class="live-emoji">🚬</div>
+          <h3>Sutta Room</h3>
+          <div class="live-tag2">break room · real-time presence</div>
+          <p>A virtual smoke break with a <strong>real</strong> head-count — actual connected people, a live message wall. If one person's here, it says one. Nothing's faked.</p>
+          <span class="open">Open app →</span>
+        </a>
       </div>
+      <p class="section-sub" style="margin-top:22px;font-size:.82rem;opacity:.7">Running locally: Sutta Room needs its Node server (<code>npm start</code> in apps/sutta-room, port 5051). On deploy these become their own domains.</p>
     </section>
 
     <section class="closer">
       <h2>Ship one, not ten.</h2>
-      <p>The whole genre is a single insight: <strong>people will pay (in attention) for the shape of a thing.</strong> Pick the one pressure your users feel hardest — exams, rent, the train home, the wedding — and fake <em>that</em> beautifully.</p>
+      <p>The whole genre is a single insight: <strong>people will pay (in attention) for the shape of a thing.</strong> Pick the one pressure your users feel hardest — exams, rent, the train home, the wedding — and build <em>that</em> beautifully. Two down.</p>
     </section>
   </main>
 

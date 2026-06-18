@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sutta Room — take a break with whoever's actually here 🚬</title>
+  <meta name="description" content="A virtual sutta-break room with real presence. The head-count is real people, the wall is real messages. Nobody's faked." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Hind:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚬</text></svg>" />
+</head>
+<body>
+  <div class="smoke smoke-1"></div>
+  <div class="smoke smoke-2"></div>
+
+  <header class="top">
+    <div class="brand">🚬 Sutta&nbsp;Room</div>
+    <div class="conn" id="conn"><span class="cdot" id="cdot"></span><span id="connText">connecting…</span></div>
+  </header>
+
+  <main>
+    <section class="stage">
+      <p class="tag">a virtual smoke break · everyone here is real</p>
+      <div class="ciggy" id="ciggy" title="light up / stub out">
+        <div class="stick"><span class="ember" id="ember"></span></div>
+      </div>
+      <button class="light-btn" id="lightBtn">Light up 🔥</button>
+      <p class="hint" id="hint">Tap to light up. You'll show up in the count below.</p>
+
+      <div class="counts">
+        <div class="count">
+          <b id="inRoom">—</b>
+          <span>in the room right now</span>
+        </div>
+        <div class="count">
+          <b id="smoking">—</b>
+          <span>on a sutta this second</span>
+        </div>
+      </div>
+      <p class="real-note">These are live socket counts — open this page in another tab and watch them change.</p>
+    </section>
+
+    <section class="wall-wrap">
+      <div class="wall-head">the wall <small>real messages, last 40</small></div>
+      <div class="wall" id="wall">
+        <div class="empty" id="empty">No one's said anything yet. You could be the first. 🌃</div>
+      </div>
+      <form class="say" id="say">
+        <input id="input" maxlength="140" placeholder="kya chal raha hai? type it out…" autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    you're <b id="whoami">…</b> · anonymous · part of <a href="../../index.html">Dopamine Desi</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
