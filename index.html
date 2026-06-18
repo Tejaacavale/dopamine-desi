@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dopamine Desi — fake apps for a tired generation 🇮🇳</title>
+  <meta name="description" content="10 'dopamine app' ideas for India — apps where you do the ritual without the transaction. Inspired by South Korea's dopamine sites. Order food you'll never eat, take a chai break with strangers, book a train home you'll never catch." />
+  <meta property="og:title" content="Dopamine Desi — fake apps for a tired generation" />
+  <meta property="og:description" content="10 'dopamine app' ideas for India. Do the ritual, skip the transaction. Two of them actually work — try them." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Hind:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+</head>
+<body>
+  <!-- ambient blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top">Dopamine<span>Desi</span></a>
+    <nav class="nav-links">
+      <a href="#trend">the trend</a>
+      <a href="#ideas">10 apps</a>
+      <a href="#demos">try it →</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="badge">⚡ inspired by South Korea's "dopamine sites"</div>
+      <h1>Do the ritual.<br /><span class="grad">Skip the transaction.</span></h1>
+      <p class="sub">
+        In Korea, burnt-out Gen Z opens fake food-delivery apps — browse the menu, fill the cart,
+        tap <em>order</em> — and never pay. They sit in virtual smoke-break rooms just to feel
+        less alone. <strong>Here are 10 versions of that idea, built for India.</strong>
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#demos">Try 2 working ones</a>
+        <a class="btn btn-ghost" href="#ideas">See all 10 ideas</a>
+      </div>
+      <div class="hero-stats">
+        <div><b id="liveCount">—</b><span>desis pretending right now</span></div>
+        <div><b>₹0</b><span>spent · 0 calories · 0 regret</span></div>
+        <div><b>10</b><span>apps for a tired generation</span></div>
+      </div>
+    </section>
+
+    <!-- TREND -->
+    <section id="trend" class="trend">
+      <h2 class="section-title">Wait — why <span class="grad">fake</span> apps?</h2>
+      <div class="trend-grid">
+        <div class="trend-card">
+          <div class="emoji">🍔</div>
+          <h3>The craving, not the cost</h3>
+          <p>Scrolling a menu, adding to cart and hitting "order" gives almost the same hit as real takeout — minus the ₹120 delivery fee, the guilt, and the calories.</p>
+        </div>
+        <div class="trend-card">
+          <div class="emoji">🚬</div>
+          <h3>Alone, together</h3>
+          <p>The smoke-break site just shows how many strangers are online and lets them post one line: <em>"made it through another day."</em> That's the whole product. It works.</p>
+        </div>
+        <div class="trend-card">
+          <div class="emoji">🧠</div>
+          <h3>Burnout economics</h3>
+          <p>An era of uncertainty + expensive everything = a generation that wants the <em>feeling</em> of a small win without the price tag. India has all the same pressures, turned up.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IDEAS -->
+    <section id="ideas" class="ideas">
+      <h2 class="section-title">10 dopamine apps, <span class="grad">desi edition</span></h2>
+      <p class="section-sub">Each one steals the same trick — the ritual without the bill — and points it at a very Indian pressure.</p>
+      <div class="idea-grid" id="ideaGrid"><!-- cards injected by app.js --></div>
+    </section>
+
+    <!-- DEMOS -->
+    <section id="demos" class="demos">
+      <h2 class="section-title">Two of them <span class="grad">actually work</span></h2>
+      <p class="section-sub">No sign-up, no payment, no point. Exactly the point.</p>
+
+      <div class="demo-wrap">
+        <!-- FAKE FOOD -->
+        <div class="demo-card">
+          <div class="demo-head">
+            <div class="demo-title">🍔 Bhook Bhagao</div>
+            <div class="demo-tag">fake food delivery</div>
+          </div>
+          <div class="phone" id="foodApp">
+            <div class="phone-bar">
+              <span>📍 Koramangala, Bengaluru</span><span id="phoneTime">9:41</span>
+            </div>
+            <div class="phone-body" id="foodBody">
+              <div class="search">🔍 <span>Biryani, dosa, momos, chai…</span></div>
+              <div class="menu" id="menu"></div>
+            </div>
+            <div class="cart-bar" id="cartBar" hidden>
+              <div class="cart-info"><b id="cartCount">0</b> items · <span id="cartTotal">₹0</span> <small>(you won't pay)</small></div>
+              <button class="btn btn-primary sm" id="orderBtn">Place order</button>
+            </div>
+            <div class="phone-overlay" id="foodOverlay" hidden></div>
+          </div>
+        </div>
+
+        <!-- CHAI BREAK -->
+        <div class="demo-card">
+          <div class="demo-head">
+            <div class="demo-title">☕ Chai Pe Charcha</div>
+            <div class="demo-tag">virtual chai-tapri break room</div>
+          </div>
+          <div class="phone chai" id="chaiApp">
+            <div class="chai-top">
+              <div class="cup" id="cup">☕</div>
+              <p class="chai-status" id="chaiStatus">Tap the cup to join the break.</p>
+              <div class="online"><span class="dot"></span><b id="chaiOnline">0</b> people on a break right now</div>
+            </div>
+            <div class="wall" id="wall"></div>
+            <form class="chai-form" id="chaiForm">
+              <input id="chaiInput" maxlength="60" placeholder="ek aur din nikal gaya…" autocomplete="off" />
+              <button class="btn btn-primary sm" type="submit">Post</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closer">
+      <h2>Ship one, not ten.</h2>
+      <p>The whole genre is a single insight: <strong>people will pay (in attention) for the shape of a thing.</strong> Pick the one pressure your users feel hardest — exams, rent, the train home, the wedding — and fake <em>that</em> beautifully.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Built as a concept showcase · the "dopamine sites" trend is real, these India spins are not (yet) · ₹0 spent making this.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
